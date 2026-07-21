@@ -3,27 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wallabot — Escáner de Chollos</title>
+    <title>Wallabot v1.0 — Escáner de Chollos</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #121212; color: #ffffff; text-align: center; padding: 50px 20px; margin: 0; }
-        .card { background: #1e1e1e; max-width: 500px; margin: 0 auto; padding: 30px; border-radius: 12px; border: 1px solid #333; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        h1 { color: #2563eb; margin-bottom: 10px; }
-        p { color: #aaa; line-height: 1.5; }
-        .features { text-align: left; margin: 20px 0; padding-left: 20px; color: #ddd; }
-        .btn { display: inline-block; background: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 15px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #121212; color: #e0e0e0; line-height: 1.6; padding: 40px 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        /* Layout: Слева текст, справа скриншот */
+        .hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 30px; margin-bottom: 50px; background: #1e1e1e; padding: 35px; border-radius: 16px; border: 1px solid #333; }
+        .hero-text { flex: 1; min-width: 300px; }
+        .hero-image { flex: 1; min-width: 300px; text-align: center; }
+        .hero-image img { max-width: 100%; height: auto; border-radius: 10px; border: 1px solid #444; box-shadow: 0 8px 25px rgba(0,0,0,0.7); }
+        
+        h1 { color: #3b82f6; font-size: 2.2rem; margin-bottom: 15px; }
+        p { color: #aaa; margin-bottom: 20px; font-size: 1.05rem; }
+        
+        .features { list-style: none; margin-bottom: 25px; }
+        .features li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; color: #ddd; }
+        
+        /* Инструкция внизу */
+        .instructions { background: #1e1e1e; padding: 35px; border-radius: 16px; border: 1px solid #333; }
+        .instructions h2 { color: #22c55e; margin-bottom: 20px; font-size: 1.6rem; text-align: center; }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 25px; }
+        .step-card { background: #252525; padding: 20px; border-radius: 10px; border-left: 4px solid #3b82f6; }
+        .step-number { font-weight: bold; color: #3b82f6; font-size: 1.1rem; margin-bottom: 8px; }
+        
+        .btn { display: inline-block; background: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.2s; margin-top: 10px; }
         .btn:hover { background: #1d4ed8; }
+        .btn-tg { background: #229ED9; }
+        .btn-tg:hover { background: #1a82b6; }
+        
+        code { background: #111; padding: 3px 8px; border-radius: 4px; color: #22c55e; font-family: monospace; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Wallabot v1.0</h1>
-        <p>Automatiza tu negocio de resell. Escanea Wallapop en tiempo real y detecta chollos al instante.</p>
-        <ul class="features">
-            <li>⚡ Escaneo en tiempo real</li>
-            <li>🎯 Filtros por ubicación y precio</li>
-            <li>🛡️ 100% seguro e indetectable</li>
-        </ul>
-        <a href="https://t.me/твой_контакт" class="btn">Conseguir Licencia</a>
+    <div class="container">
+        
+        <!-- Верхний блок -->
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Wallabot v1.0</h1>
+                <p>Automatiza tu negocio de resell en Wallapop. Encuentra chollos en tiempo real antes que nadie.</p>
+                <ul class="features">
+                    <li>⚡ Escaneo continuo y rápido</li>
+                    <li>🎯 Filtro por palabras clave y radio (km)</li>
+                    <li>🛡️ Licencia vinculada a tu hardware</li>
+                </ul>
+                <a href="#download" class="btn">Instrucciones de descarga</a>
+            </div>
+            <div class="hero-image">
+                <!-- Сохрани скриншот в репозиторий под именем app.png -->
+                <img src="app.png" alt="Wallabot Interface">
+            </div>
+        </div>
+
+        <!-- Пошаговая инструкция -->
+        <div class="instructions" id="download">
+            <h2>¿Cómo empezar a usar Wallabot?</h2>
+            <div class="steps">
+                <div class="step-card">
+                    <div class="step-number">Paso 1: Descargar</div>
+                    <p>Descarga la aplicación gratuita sin licencia activa en tu PC.</p>
+                    <a href="https://github.com/alex201111/Wallabot_site/releases" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Descargar .EXE</a>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">Paso 2: Obtener Identificador</div>
+                    <p>Abre el programa. En la consola inferior verás tu código: <code>Tu identificador: XXXX</code>. Copia ese código.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">Paso 3: Activar Licencia</div>
+                    <p>Envía tu identificador por Telegram para activar tu licencia de acceso.</p>
+                    <a href="https://t.me/vingsyx" target="_blank" class="btn btn-tg" style="font-size: 0.9rem; padding: 8px 16px;">Contactar en Telegram</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
